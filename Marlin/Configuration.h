@@ -81,7 +81,7 @@
 // User-specified version info of this build to display in [Pronterface, etc] terminal window during
 // startup. Implementation of an idea by Prof Braino to inform user that any changes made to this
 // build by the user have been successfully uploaded into firmware.
-#define STRING_CONFIG_H_AUTHOR "2019-01-19; Volumetric, Inc. for the Lumen with Einsy and IGUS and BARICUDA firmware ON" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "2019-02-02; Volumetric, Inc. for the Lumen with Einsy and IGUS and BARICUDA firmware ON" // Who made the changes.
 #define SHOW_BOOTSCREEN
 #define STRING_SPLASH_LINE1 SHORT_BUILD_VERSION // will be shown during bootup in line 1
 #define STRING_SPLASH_LINE2 WEBSITE_URL         // will be shown during bootup in line 2
@@ -608,7 +608,11 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 1600, 80, 4000, 500 } // { 80, 80, 4000, 500 }
+// 200 steps      1 revolution       MICROSTEP-VALUE   
+// ----------  *  ------------  *   -----------------
+// revolution         2 mm                  1
+ 
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { X_MICROSTEPS*200/2, Y_MICROSTEPS*200/2, Z_MICROSTEPS*200/2, E0_MICROSTEPS*200/2 } // { 80, 80, 4000, 500 }
 
 /**
  * Default Max Feed Rate (mm/s)
