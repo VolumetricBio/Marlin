@@ -1098,6 +1098,13 @@
  */
 #if HAS_TRINAMIC
 
+// STEPPERONLINE    17HS13-0404S1  34 mm body length  USE X_CURRENT = 500-800 all give:  ~25 oz.in.
+// STEPPERONLINE    17HS13-1334S   34 mm body length  USE X_CURRENT = ??? gives:         ~?? oz.in.
+// STEPPERONLINE    17HS16-2004S1  40 mm body length  USE X_CURRENT = 1400 gives:        ~45 oz.in.
+// LIN ENGINEERING  WO-4418S-01    34 mm body length  USE X_CURRENT = 1400 gives:        ~40 oz.in.
+// LIN ENGINEERING  WO-4418M-01    40 mm body length  USE X_CURRENT = 1400 gives:        ~45 oz.in.
+
+
   #define R_SENSE           0.11  // R_sense resistor for SilentStepStick2130
   #define HOLD_MULTIPLIER    1  // Scales down the holding current from run current
   #define INTERPOLATE       false  // Interpolate X/Y/Z_MICROSTEPS to 256
