@@ -382,8 +382,8 @@
 // @section homing
 
 // Homing hits each endstop, retracts by these distances, then does a slower bump.
-#define X_HOME_BUMP_MM 1 // Default: 5
-#define Y_HOME_BUMP_MM 5
+#define X_HOME_BUMP_MM 0 // Default: 5
+#define Y_HOME_BUMP_MM 0
 #define Z_HOME_BUMP_MM 2
 #define HOMING_BUMP_DIVISOR { 2, 2, 4 }  // Re-Bump Speed Divisor (Divides the Homing Feedrate)
 //#define QUICK_HOME                     // If homing includes X and Y, do a diagonal move initially
@@ -1098,12 +1098,15 @@
  */
 #if HAS_TRINAMIC
 
-// STEPPERONLINE    17HS13-0404S1  34 mm body length  USE X_CURRENT = 500-800 all give:  ~25 oz.in.
-// STEPPERONLINE    17HS13-1334S   34 mm body length  USE X_CURRENT = ??? gives:         ~?? oz.in.
-// STEPPERONLINE    17HS16-2004S1  40 mm body length  USE X_CURRENT = 1400 gives:        ~45 oz.in.
-// LIN ENGINEERING  WO-4418S-01    34 mm body length  USE X_CURRENT = 1400 gives:        ~40 oz.in.
-// LIN ENGINEERING  WO-4418M-01    40 mm body length  USE X_CURRENT = 1400 gives:        ~45 oz.in.
+// STEPPERONLINE    "17HS13-0404S1"  // 34 mm body length  USE X_CURRENT = 500-800 all give:  ~25 oz.in.
+// STEPPERONLINE    "17HS13-1334S"   // 34 mm body length  USE X_CURRENT = ??? gives:         ~?? oz.in.
+// STEPPERONLINE    "17HS16-2004S1"  // 40 mm body length  USE X_CURRENT = 1400 gives:        ~45 oz.in.
+// LIN ENGINEERING  "WO-4418S-01"    // 34 mm body length  USE X_CURRENT = 1400 gives:        ~40 oz.in.
+// LIN ENGINEERING  "WO-4418M-01"    // 40 mm body length  USE X_CURRENT = 1400 gives:        ~45 oz.in.
 
+
+  #define VOLUMETRIC_MOTOR "WO-4418S-01"    // 34 mm body length  USE X_CURRENT = 1400 gives:        ~40 oz.in.
+  // slow speeds and acceleration, half stepping, full holding torque, no interpolation (technically extrapolation), lower sensitivity on trinamic sensorless_homing to power through rough spots
 
   #define R_SENSE           0.11  // R_sense resistor for SilentStepStick2130
   #define HOLD_MULTIPLIER    0.5  // Scales down the holding current from run current
@@ -1212,7 +1215,7 @@
   #define SENSORLESS_HOMING // TMC2130 only
 
   #if ENABLED(SENSORLESS_HOMING)
-    #define X_HOMING_SENSITIVITY  20
+    #define X_HOMING_SENSITIVITY  10
     #define Y_HOMING_SENSITIVITY  8
     #define Z_HOMING_SENSITIVITY  8
   #endif
