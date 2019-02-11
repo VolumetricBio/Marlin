@@ -1105,7 +1105,7 @@
 // LIN ENGINEERING  "WO-4418M-01"    // 40 mm body length  USE X_CURRENT = 1400 gives:        ~45 oz.in.
 
 
-  #define VOLUMETRIC_MOTOR "WO-4418S-01"    // 34 mm body length  USE X_CURRENT = 1400 gives:        ~40 oz.in.
+  #define VOLUMETRIC_MOTOR "17HS16-2004S1"  // 40 mm body length  USE X_CURRENT = 1400 gives:        ~45 oz.in.
   // slow speeds and acceleration, half stepping, full holding torque, no interpolation (technically extrapolation), lower sensitivity on trinamic sensorless_homing to power through rough spots
 
   #define R_SENSE           0.11  // R_sense resistor for SilentStepStick2130
