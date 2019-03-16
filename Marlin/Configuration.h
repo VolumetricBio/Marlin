@@ -413,7 +413,7 @@
  * heater. If your configuration is significantly different than this and you don't understand
  * the issues involved, don't use bed PID until someone else verifies that your hardware works.
  */
-//#define PIDTEMPBED
+#define PIDTEMPBED
 
 //#define BED_LIMIT_SWITCHING
 
@@ -611,15 +611,16 @@
 // 200 steps      1 revolution       MICROSTEP-VALUE   
 // ----------  *  ------------  *   -----------------
 // revolution         2 mm                  1
- 
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { X_MICROSTEPS*200/2, Y_MICROSTEPS*200/2, Z_MICROSTEPS*200/2, E0_MICROSTEPS*200/2 } // { 80, 80, 4000, 500 }
+
+// MillerLab -- using ballscrews with 4 mm per revolution 
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { X_MICROSTEPS*200/4, Y_MICROSTEPS*200/4, Z_MICROSTEPS*200/4, E0_MICROSTEPS*200/4 } // { 80, 80, 4000, 500 }
 
 /**
  * Default Max Feed Rate (mm/s)
  * Override with M203
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 5, 5, 5, 25 } // { 300, 300, 5, 25 }
+#define DEFAULT_MAX_FEEDRATE          { 10, 10, 10, 10} // { 300, 300, 5, 25 }
 
 /**
  * Default Max Acceleration (change/s) change = mm/s
@@ -627,19 +628,19 @@
  * Override with M201
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 50, 50, 50, 10000 } // { 3000, 3000, 100, 10000 }
+#define DEFAULT_MAX_ACCELERATION      { 50, 50, 50, 50 } // { 3000, 3000, 100, 10000 }
 
 /**
  * Default Acceleration (change/s) change = mm/s
- * Override with M204
+ * Override with M204k
  *
  *   M204 P    Acceleration
  *   M204 R    Retract Acceleration
  *   M204 T    Travel Acceleration
  */
-#define DEFAULT_ACCELERATION          50    // X, Y, Z and E acceleration for printing moves
-#define DEFAULT_RETRACT_ACCELERATION  50    // E acceleration for retracts
-#define DEFAULT_TRAVEL_ACCELERATION   50    // X, Y, Z acceleration for travel (non printing) moves
+#define DEFAULT_ACCELERATION          100    // X, Y, Z and E acceleration for printing moves
+#define DEFAULT_RETRACT_ACCELERATION  100    // E acceleration for retracts
+#define DEFAULT_TRAVEL_ACCELERATION   100    // X, Y, Z acceleration for travel (non printing) moves
 
 /**
  * Default Jerk (mm/s)
@@ -883,7 +884,7 @@
 // @section machine
 
 // The size of the print bed
-#define X_BED_SIZE 55
+#define X_BED_SIZE 80
 #define Y_BED_SIZE 200
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
@@ -1127,7 +1128,7 @@
 
 // @section homing
 
-// The center of the bed is at (X=0, Y=0)
+// The center of the be/var/folders/v0/z9cvplgd1lv16rh1790qgcn80000gv/T/arduino_build_375453/Marlin.ino.hexd is at (X=0, Y=0)
 //#define BED_CENTER_AT_0_0
 
 // Manually set the home position. Leave these undefined for automatic settings.
@@ -1153,8 +1154,8 @@
 #endif
 
 // Homing speeds (mm/m)
-#define HOMING_FEEDRATE_XY (3*60) // Default is 4*60
-#define HOMING_FEEDRATE_Z  (3*60)
+#define HOMING_FEEDRATE_XY (5*60) // Default is 4*60
+#define HOMING_FEEDRATE_Z  (5*60)
 
 // @section calibrate
 
