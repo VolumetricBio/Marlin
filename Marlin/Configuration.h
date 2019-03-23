@@ -436,9 +436,14 @@
 //  #define DEFAULT_bedKd 305.4
 
   // jmil MillerLab silicone heater 10 ohm nichrome, autotune for 37 ºC
-    #define DEFAULT_bedKp 45.84
-    #define DEFAULT_bedKi .39
-    #define DEFAULT_bedKd 1332.06
+    //#define DEFAULT_bedKp 45.84
+    //#define DEFAULT_bedKi .39
+    //#define DEFAULT_bedKd 1332.06
+
+  // jmil MillerLab silicone heater 10 ohm nichrome, autotune for 37 ºC within 10 mL PBS, hat-tip Kevin Janson
+    #define DEFAULT_bedKp 67.61
+    #define DEFAULT_bedKi 0.90
+    #define DEFAULT_bedKd 1276.63
 
 
   //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
