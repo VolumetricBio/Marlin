@@ -611,15 +611,17 @@
 // 200 steps      1 revolution       MICROSTEP-VALUE   
 // ----------  *  ------------  *   -----------------
 // revolution         2 mm                  1
+// AmazonBallscrew    5 mm per revolution
+// RobotDigg          4 mm per revolution
  
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { X_MICROSTEPS*200/2, Y_MICROSTEPS*200/2, Z_MICROSTEPS*200/2, E0_MICROSTEPS*200/2 } // { 80, 80, 4000, 500 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { X_MICROSTEPS*200/5, Y_MICROSTEPS*200/5, Z_MICROSTEPS*200/5, E0_MICROSTEPS*200/5 } // { 80, 80, 4000, 500 }
 
 /**
  * Default Max Feed Rate (mm/s)
  * Override with M203
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 5, 5, 5, 25 } // { 300, 300, 5, 25 }
+#define DEFAULT_MAX_FEEDRATE          { 1, 5, 5, 25 } // 190319: { 5, 5, 5, 25 }, { 300, 300, 5, 25 }
 
 /**
  * Default Max Acceleration (change/s) change = mm/s
@@ -883,7 +885,7 @@
 // @section machine
 
 // The size of the print bed
-#define X_BED_SIZE 75
+#define X_BED_SIZE 55 // for AmazonBallscrew 5 mm
 #define Y_BED_SIZE 200
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
