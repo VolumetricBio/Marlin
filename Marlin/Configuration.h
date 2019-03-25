@@ -621,7 +621,9 @@
  * Override with M203
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 1, 5, 5, 25 } // 190319: { 5, 5, 5, 25 }, { 300, 300, 5, 25 }
+
+// AmazonBallscrew-5mm changed from 1 to 5 for X
+#define DEFAULT_MAX_FEEDRATE          { 5, 5, 5, 25 } // 190319: { 5, 5, 5, 25 }, { 300, 300, 5, 25 }
 
 /**
  * Default Max Acceleration (change/s) change = mm/s
