@@ -524,7 +524,7 @@
 #define USE_XMIN_PLUG
 #define USE_YMIN_PLUG
 #define USE_ZMIN_PLUG
-// #define USE_XMAX_PLUG
+#define USE_XMAX_PLUG // enable for IceLumen
 // #define USE_YMAX_PLUG
 // #define USE_ZMAX_PLUG
 
@@ -532,7 +532,7 @@
 // #define ENDSTOPPULLUPS
 #if DISABLED(ENDSTOPPULLUPS)
   // Disable ENDSTOPPULLUPS to set pullups individually
-  // #define ENDSTOPPULLUP_XMAX
+  #define ENDSTOPPULLUP_XMAX // enable for IceLumen
   // #define ENDSTOPPULLUP_YMAX
   // #define ENDSTOPPULLUP_ZMAX
   #define ENDSTOPPULLUP_XMIN
@@ -578,7 +578,8 @@
 
 // Enable this feature if all enabled endstop pins are interrupt-capable.
 // This will remove the need to poll the interrupt pins, saving many CPU cycles.
-#define ENDSTOP_INTERRUPTS_FEATURE
+// disable for IceLumen
+//#define ENDSTOP_INTERRUPTS_FEATURE
 
 /**
  * Endstop Noise Filter
