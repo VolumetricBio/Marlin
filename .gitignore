@@ -122,6 +122,9 @@ tags
 .piolibdeps
 lib/readme.txt
 
+#Volumetric 2020-07-09
+desktop.ini
+
 #Visual Studio
 *.sln
 *.vcxproj
